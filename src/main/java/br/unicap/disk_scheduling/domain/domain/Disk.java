@@ -36,9 +36,9 @@ public class Disk {
 
         IntStream.range(0, this.size).forEach(i -> {
             if (i == position) {
-                line.append("X |");
+                line.append("X|");
             } else {
-                line.append("  |");
+                line.append(" |");
             }
         });
 
