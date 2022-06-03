@@ -11,8 +11,8 @@ public class Handler {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int diskSize = 100;
-        int requestsQuantity = 50;
+        int diskSize = 30;
+        int requestsQuantity = 10;
 
         Disk disk1 = new Disk(diskSize);
         Disk disk2 = new Disk(diskSize);
