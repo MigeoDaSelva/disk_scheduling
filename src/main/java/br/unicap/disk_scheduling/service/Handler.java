@@ -11,10 +11,11 @@ public class Handler {
 
     public static void main(String[] args) {
         Random random = new Random();
-        Disk disk1 = new Disk(20);
-        Disk disk2 = new Disk(20);
+        int diskSize = 200;
+        int requestsQuantity = 20;
 
-        int requestsQuantity = 10;
+        Disk disk1 = new Disk(diskSize);
+        Disk disk2 = new Disk(diskSize);
 
         System.out.println("Adding requests to disk");
 
