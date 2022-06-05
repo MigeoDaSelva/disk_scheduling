@@ -22,7 +22,23 @@ public class Disk {
     }
 
     public Table getHTMLRepresentation(String caption) {
-        return new TableFactoryMethod().buildeTable(caption, size, positions);
+        return new TableFactoryMethod().buildeTable(caption, size, positions, 
+        String.format("Total Blocks Traveled: %d", this.getTotalBlocksTraveled()));
+    }
+
+    public int getTotalBlocksTraveled() {
+        int total = 0;
+
+        if (this.getPositions().size() <= 1) {
+            total = this.positions.get(0);
+        } else {
+
+            for (int i = 0; i < this.positions.size() - 1; i++) {
+                total += Math.abs(this.positions.get(i) - this.positions.get(i + 1));
+            }
+        }
+
+        return total;
     }
 
     @Override

@@ -19,7 +19,7 @@ public class Handler {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int diskSize = 30;
+        int diskSize = 50;
         int requestsQuantity = 7;
 
         Disk disk1 = new Disk(diskSize);
@@ -57,6 +57,7 @@ public class Handler {
 
         System.out.println("Disk after SSTF:");
         System.out.println(disk1.getPositions());
+        System.out.println(disk1.getTotalBlocksTraveled());
         System.out.println(disk1.toString());
 
         Table table1 = disk1.getHTMLRepresentation("Disk after SSTF:");
@@ -65,6 +66,7 @@ public class Handler {
 
         System.out.println("Disk after FCFS:");
         System.out.println(disk2.getPositions());
+        System.out.println(disk2.getTotalBlocksTraveled());
         System.out.println(disk2.toString());
 
         Table table2 = disk2.getHTMLRepresentation("Disk after FCFS:");

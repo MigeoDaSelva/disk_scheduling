@@ -14,10 +14,11 @@ public class TableFactoryMethod {
 
     }
 
-    public Table buildeTable(String caption, int size, List<Integer> positions) {
+    public Table buildeTable(String caption, int size, List<Integer> positions, String totalBlocksTraveled) {
         Table table = new Table();
         Row captionRow = new Row();
         captionRow.addElement(new Caption(caption));
+        captionRow.addElement(new Caption(totalBlocksTraveled));
         captionRow.addElement(new Caption(String.format("Positions: %s", positions)));
         table.addRow(captionRow);
         Row indexRow = this.makeRowOfIndex(size);
