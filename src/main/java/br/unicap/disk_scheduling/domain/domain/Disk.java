@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import br.unicap.disk_scheduling.application.TableFactoryMethod;
+
 public class Disk {
 
     private List<Integer> positions;
@@ -17,6 +19,10 @@ public class Disk {
 
     public void addRequest(int position) {
         this.positions.add(position);
+    }
+
+    public Table getHTMLRepresentation(String caption) {
+        return new TableFactoryMethod().buildeTable(caption, size, positions);
     }
 
     @Override

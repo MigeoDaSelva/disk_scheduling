@@ -39,15 +39,15 @@ public class Table {
         element = new TableHeader("0");
         element.setStyle("\"color: green;\"");
         row.addElement(element);
-        element = new TableData("#");
+        element = new TableData("Lorak");
         row.addElement(element);
-        element = new TableData("#");
+        element = new TableData("Lorak");
         row.addElement(element);
-        element = new TableData("#");
+        element = new TableData("Lorak");
         row.addElement(element);
-        element = new TableData("#");
+        element = new TableData("Lorak");
         row.addElement(element);
-        element = new TableData("#");
+        element = new TableData("Lorak");
         row.addElement(element);
 
         Row row2 = new Row();
