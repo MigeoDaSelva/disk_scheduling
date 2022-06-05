@@ -1,19 +1,19 @@
 package br.unicap.disk_scheduling.service;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Random;
 import java.util.stream.Collectors;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.FileWriter;
 import java.awt.Desktop;
+import java.util.Random;
+import java.io.File;
 
 import br.unicap.disk_scheduling.application.FCFSSchedulingAlgorithm;
 import br.unicap.disk_scheduling.application.SSTFSchedulingAlgorithm;
-import br.unicap.disk_scheduling.domain.domain.Disk;
+import br.unicap.disk_scheduling.domain.interfaces.Element;
 import br.unicap.disk_scheduling.domain.domain.Style;
 import br.unicap.disk_scheduling.domain.domain.Table;
-import br.unicap.disk_scheduling.domain.interfaces.Element;
+import br.unicap.disk_scheduling.domain.domain.Disk;
 
 public class Handler {
 
@@ -30,15 +30,15 @@ public class Handler {
         int value;
         for (int i = 0; i < requestsQuantity; i++) {
 
-            value = random.nextInt(disk1.getSize());
+            value = random.nextInt(disk1.getSize())+1;
             while (disk1.contains(value)) {
                 value = random.nextInt(disk1.getSize());
             }
-
             disk1.addRequest(value);
         }
 
         disk2.setPositions(disk1.getPositions().stream().map(val -> new Integer(val))
+
                 .collect(Collectors.toList()));
 
         Element style = new Style(
